@@ -65,6 +65,16 @@ class AudysseySelect(DenonControlsEntity, SelectEntity):
         self._attr_translation_key = description.translation_key
 
     @property
+    def available(self) -> bool:
+        """Return whether this setting can currently be changed."""
+        if self.entity_description.key == "reference_level_offset":
+            return (
+                super().available
+                and self.coordinator.receiver.audyssey.dynamic_eq is True
+            )
+        return super().available
+
+    @property
     def current_option(self) -> str | None:
         """Return the current setting."""
         return self.entity_description.value_fn()
