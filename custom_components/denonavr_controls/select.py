@@ -3,7 +3,7 @@
 from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 
-from homeassistant.components.select import SelectEntity
+from homeassistant.components.select import SelectEntity, SelectEntityDescription
 from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DenonControlsConfigEntry
@@ -11,11 +11,9 @@ from .entity import DenonControlsEntity
 
 
 @dataclass(frozen=True, kw_only=True)
-class AudysseySelectDescription:
+class AudysseySelectDescription(SelectEntityDescription):
     """Describe an Audyssey select."""
 
-    key: str
-    translation_key: str
     value_fn: Callable
     options_fn: Callable
     set_fn: Callable[[str], Awaitable[None]]
