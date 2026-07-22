@@ -1,0 +1,11 @@
+{
+  "domain": "denonavr_controls",
+  "name": "Denon AVR Controls",
+  "codeowners": ["@cvanvliet"],
+  "config_flow": true,
+  "documentation": "https://github.com/cvanvliet/ha-denonavr-controls",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "requirements": ["denonavr==1.3.3"],
+  "version": "0.1.0"
+}

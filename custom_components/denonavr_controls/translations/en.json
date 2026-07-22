@@ -1,0 +1,25 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to your Denon receiver",
+        "description": "Enter the IP address or network name of the receiver. The official Denon integration can remain installed.",
+        "data": {"host": "Receiver address"}
+      }
+    },
+    "error": {"cannot_connect": "Unable to connect to the receiver"},
+    "abort": {"already_configured": "This receiver is already configured"}
+  },
+  "entity": {
+    "select": {
+      "dynamic_volume": {"name": "Dynamic volume"},
+      "reference_level_offset": {"name": "Reference level offset"},
+      "multi_eq": {"name": "MultiEQ"}
+    },
+    "switch": {"dynamic_eq": {"name": "Dynamic EQ"}},
+    "button": {
+      "refresh_audyssey": {"name": "Refresh Audyssey"},
+      "recover_audio": {"name": "Recover audio"}
+    }
+  }
+}
