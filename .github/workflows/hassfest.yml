@@ -1,0 +1,13 @@
+name: Hassfest validation
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  hassfest:
+    name: Hassfest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate with Hassfest
+        uses: home-assistant/actions/hassfest@master
